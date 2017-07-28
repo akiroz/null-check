@@ -5,7 +5,7 @@ const rpc = require("node-json-rpc2").Server;
 exports = {
   includeme(sg) {
     sg.handler(
-      "/", req => new Promise(
+      "api", req => new Promise(
         resolve => {
           console.log(req);
           resolve({hello: "world"});
