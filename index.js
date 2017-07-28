@@ -11,13 +11,14 @@ module.exports = {
     `)
     skygearCloud.handler(
       "api", req => new Promise(
-        resolve => {
-          console.log(req);
-          resolve({hello: "world"});
+        (resolve,reject) => {
           request
             .post("http://localhost:58712")
-            .send({})
-            .end(resp => {});
+            .send(JSON.parse(req.body))
+            .end((err,resp) => {
+              if(err) reject(err);
+              resolve(resp.body);
+            });
         }
       ), {
         method: ["POST"]
