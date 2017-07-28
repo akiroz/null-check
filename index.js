@@ -1,10 +1,15 @@
-const http = require("http");
-const request = require('superagent');
+const request = require("superagent");
 const rpc = require("node-json-rpc2").Server;
+const skygearCloud = require("skygear/cloud");
 
-exports = {
-  includeme(sg) {
-    sg.handler(
+module.exports = {
+  includeme() {
+    console.log(`
+      #############################
+         INITIALIZING CLOUD CODE
+      #############################
+    `)
+    skygearCloud.handler(
       "api", req => new Promise(
         resolve => {
           console.log(req);

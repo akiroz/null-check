@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "node-json-rpc2": "^1.1.0",
-    "skygear": "^1.0.0"
+    "skygear": "^1.0.0",
+    "superagent": "^3.5.2"
   }
 }
