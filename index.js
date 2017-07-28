@@ -23,9 +23,9 @@ exports = {
       port: 58712,
       method: "POST"
     }).addMethod(
-      "isNullOrUndefined", (params,id) => ({
+      "isNullOrUndefined", ({ value },id) => ({
         id,
-        result: 
+        result: value === undefined || value === null
       })
     );
   }
